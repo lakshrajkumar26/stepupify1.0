@@ -1,3 +1,11 @@
+Getting Ready 
+# Install Dependencies
+ - npm install
+# Select the current Directory
+ - cd direct_Name
+# Start deploying server
+ - npm run dev
+
 the tools and technologies used in this project 
 
 ### 1. Frontend Technologies
