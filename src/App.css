@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body{
+   /* <uniquifier>: Use a unique and descriptive class name
+   <weight>: Use a value from 100 to 900 */
+
+.inter-<uniquifier> {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+}
+
+header{
+  z-index:10001 !important;
+}
+.btn-primary{
+  @apply px-7 py-2 bg-brandPrimary text-white rounded hover:bg-neutralDGrey transition-all duration-300 hover:translate-y-4
+}
+.active{
+  @apply block text-base text-grey900
+  hover:text-brandPrimary first:font-medium
+}
+
+.pgstyle{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+
+.pgstyle li{
+  margin:0 5px;
+}
+
+.pgstyle a{
+  display:inline-block ;
+  padding:5px 10px;
+  border: 1px solid #ccc;
+  border-radius:4px;
+  text-decoration:none;
+  color:#000;
+}
+.pgstyle a:hover{
+  background:#eee;
+}
+
+.pgstyle li.activerPagination{
+  background:rgb(255,106,0)
+}
+
+
+.active-button{}
