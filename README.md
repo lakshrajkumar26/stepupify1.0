@@ -1,4 +1,4 @@
-Getting Ready 
+![Screenshot 2025-03-08 004504](https://github.com/user-attachments/assets/5a5a830d-130f-494e-8d9c-018c0d5fe530)Getting Ready 
 # Install Dependencies
  - npm install
 # Select the current Directory
@@ -54,4 +54,9 @@ the tools and technologies used in this project
 - ESLint - Code linting
 - PostCSS - CSS processing
 - Autoprefixer - CSS vendor prefixing
-Would you like me to elaborate on any specific aspect of the implementation?
+- 
+![Screenshot 2025-03-08 004504](https://github.com/user-attachments/assets/bbfa925b-423c-4f52-8f92-6d9093de905b)
+![Screenshot 2025-03-08 004627](https://github.com/user-attachments/assets/464d1e13-5ca8-4a69-8dbc-32ca2c3b4929)
+![Screenshot 2025-03-08 004639](https://github.com/user-attachments/assets/5dcc6553-593c-45d5-9be0-5ee54a873336)
+![Screenshot 2025-03-08 004656](https://github.com/user-attachments/assets/835aa57c-d27a-4d81-a679-934d0d536aab)
+
