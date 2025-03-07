@@ -1,20 +1,48 @@
 import React from 'react'
 
-const CategorySelection = ({onSelectCategory,activeCategory}) => {
-  const categories =["brushcutter","sprayer","weeder","auger","poultary","chainsaw","electronic","bcaccessories","others"];
-   
+const CategorySelection = ({ onSelectCategory, activeCategory }) => {
+  const categories = [
+    { id: "brushcutter", label: "Brush Cutter" },
+    { id: "sprayer", label: "Sprayer" },
+    { id: "weeder", label: "Weeder" },
+    { id: "auger", label: "Auger" },
+    { id: "poultary", label: "Poultry" },
+    { id: "chainsaw", label: "Chainsaw" },
+    { id: "bcaccessories", label: "BC Accessories" },
+    { id: "others", label: "Others" }
+  ];
+
+  const handleCategoryClick = (categoryId) => {
+    if (onSelectCategory) {
+      onSelectCategory(categoryId);
+    }
+  };
+
   return (
-    <div className=' px-4 mb-7 lg:space-x-16 flex flex-wrap items-center border-b-2 py-5 text-gray-900 font-semibold'>
-      <button onClick={()=> onSelectCategory(null)} className={`lg:ml-12 ${activeCategory ?"":"active-button"}`}>All</button>
-      {
-        categories.map((category)=>(
-            <button 
-            onClick={()=> onSelectCategory(category)}
-            className={`mr-2 space-x-16 ${activeCategory === category ?"active-button":""}`}
-             key={category}>
-            {category}</button>
-        ))
-      }
+    <div className='px-4 mb-7 flex flex-wrap items-center border-b-2 py-5 gap-4'>
+      <button 
+        onClick={() => handleCategoryClick(null)}
+        className={`px-4 py-2 rounded-lg transition-colors ${
+          !activeCategory 
+            ? 'bg-blue-500 text-white' 
+            : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+        }`}
+      >
+        All
+      </button>
+      {categories.map(({ id, label }) => (
+        <button 
+          key={id}
+          onClick={() => handleCategoryClick(id)}
+          className={`px-4 py-2 rounded-lg transition-colors ${
+            activeCategory === id 
+              ? 'bg-blue-500 text-white' 
+              : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+          }`}
+        >
+          {label}
+        </button>
+      ))}
     </div>
   )
 }

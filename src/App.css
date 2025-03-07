@@ -2,60 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
-body{
-   /* <uniquifier>: Use a unique and descriptive class name
-   <weight>: Use a value from 100 to 900 */
-
-.inter-<uniquifier> {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0;
-}
+@layer base {
+  body {
+    font-family: "Montserrat", sans-serif;
+    @apply text-white m-0 p-0;
+    height: 100%;
+    width: 100%;
+  }
 }
 
-header{
-  z-index:10001 !important;
-}
-.btn-primary{
-  @apply px-7 py-2 bg-brandPrimary text-white rounded hover:bg-neutralDGrey transition-all duration-300 hover:translate-y-4
-}
-.active{
-  @apply block text-base text-grey900
-  hover:text-brandPrimary first:font-medium
+@layer components {
+  header {
+    z-index: 1000;
+  }
+
+  .btn-primary {
+    @apply px-7 py-2 bg-brandPrimary text-white rounded hover:bg-neutralDGrey transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .active {
+    @apply block text-base text-brandPrimary font-medium;
+  }
+
+  .pagination {
+    @apply flex justify-center items-center gap-2 my-8;
+  }
+
+  .pagination li {
+    @apply m-0;
+  }
+
+  .pagination a {
+    @apply inline-block px-4 py-2 border border-gray-200 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors;
+  }
+
+  .activePagination {
+    @apply bg-brandPrimary text-white;
+  }
+
+  .active-button {
+    @apply bg-brandPrimary text-white;
+  }
+
+  #cursor {
+    @apply h-[25px] w-[25px] rounded-full bg-[#95C11E] fixed z-[99] pointer-events-none;
+  }
+
+  #cursor-blur {
+    @apply h-[300px] w-[300px] rounded-full bg-[#96c22e4c] fixed z-[9] pointer-events-none blur-[30px];
+  }
+
+  #nav {
+    @apply h-[145px] w-full flex items-center justify-start px-[150px] gap-[50px] fixed z-[99] transition-colors duration-500;
+  }
+
+  #nav img {
+    @apply h-[75px];
+  }
+
+  #nav h4 {
+    @apply uppercase font-medium text-white;
+  }
+
+  video.background-video {
+    @apply h-full w-full object-cover fixed z-[-1];
+  }
+
+  #main {
+    @apply relative bg-black/40;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
 }
 
-.pgstyle{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  list-style-type:none;
-  margin:0;
-  padding:0;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.pgstyle li{
-  margin:0 5px;
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
 }
-
-.pgstyle a{
-  display:inline-block ;
-  padding:5px 10px;
-  border: 1px solid #ccc;
-  border-radius:4px;
-  text-decoration:none;
-  color:#000;
-}
-.pgstyle a:hover{
-  background:#eee;
-}
-
-.pgstyle li.activerPagination{
-  background:rgb(255,106,0)
-}
-
-
-.active-button{}

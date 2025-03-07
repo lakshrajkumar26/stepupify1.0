@@ -10,22 +10,29 @@ const ProductListing = () => {
   const [selectedCategory,setSelectedCategory]=useState(null);
   const [activeCategory,setActiveCategory] =useState(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     async function fetchProducts() {
-      let url=`http://localhost:5000/products?page=${currentPage}&limit=${pageSize}`;
+      try {
+        let url = `http://localhost:5000/products?page=${currentPage}&limit=${pageSize}`;
 
-      //filter by category
-      if(selectedCategory){
-        url +=`&category =${selectedCategory}`;
+        //filter by category
+        if (selectedCategory) {
+          url += `&category=${selectedCategory}`; // Removed space between category and =
+        }
+
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setProduct(data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        setProduct([]); // Set empty array in case of error
       }
-
-      const response =await fetch(url);
-      const data =await response.json();
-      // console.log(data);
-      setProduct(data);
     }
     fetchProducts();
-  },[currentPage,pageSize,selectedCategory])
+  }, [currentPage, pageSize, selectedCategory])
  
   //page changing btn
   const handlePageChange =(pageNumber) =>{
