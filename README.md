@@ -14,7 +14,8 @@ Getting Ready
 # React + Vite
 the tools and technologies used in this project 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal 
+setup to get React working in Vite with HMR and some ESLint rules.
 ### 1. Frontend Technologies
 - React.js (v18.3.1) - Main frontend framework
 - Vite - Build tool and development environment
